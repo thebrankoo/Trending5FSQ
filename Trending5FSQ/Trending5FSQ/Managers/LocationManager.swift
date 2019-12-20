@@ -76,7 +76,7 @@ fileprivate struct FSQUrler {
 }
 
 class FSQRequester: NSObject, NSURLConnectionDelegate {
-    func requestTrendingVenues(longitude: Double, latitude: Double, radius: Int = 120000, limit: Int = 150, completion: @escaping ([Venue]?)->Void) {
+    func requestTrendingVenues(longitude: Double, latitude: Double, radius: Int = 120000, limit: Int = 5, completion: @escaping ([Venue]?)->Void) {
 
         if let url = FSQUrler.trendingVenuesURL(limit: limit, radius: radius, long: longitude, lat: latitude) {
             let request = URLRequest(url:url)

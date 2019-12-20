@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VenueView" customModule="Trending5FSQ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="506" height="97"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hls-de-cOw">
+                    <rect key="frame" x="20" y="8" width="466" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jd-z3-VNq">
+                    <rect key="frame" x="20" y="36.5" width="466" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38Y-dG-ePz">
+                    <rect key="frame" x="20" y="62.5" width="466" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="0.80618578767123283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="38Y-dG-ePz" secondAttribute="bottom" constant="14" id="7tt-Tc-qNO"/>
+                <constraint firstItem="Hls-de-cOw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="8Hq-lv-5FS"/>
+                <constraint firstItem="Hls-de-cOw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="AUD-wr-1IQ"/>
+                <constraint firstItem="9Jd-z3-VNq" firstAttribute="top" secondItem="Hls-de-cOw" secondAttribute="bottom" constant="8" id="Mbh-IM-HwE"/>
+                <constraint firstItem="38Y-dG-ePz" firstAttribute="top" secondItem="9Jd-z3-VNq" secondAttribute="bottom" constant="8" id="OGs-Q5-8Cr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Jd-z3-VNq" secondAttribute="trailing" constant="20" id="PPp-AS-J4y"/>
+                <constraint firstAttribute="trailing" secondItem="Hls-de-cOw" secondAttribute="trailing" constant="20" id="R8O-6G-tyi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="38Y-dG-ePz" secondAttribute="trailing" constant="20" id="STg-KX-Bb5"/>
+                <constraint firstItem="9Jd-z3-VNq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ghG-EO-Diy"/>
+                <constraint firstItem="38Y-dG-ePz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zT8-rw-7Ht"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addressLabel" destination="38Y-dG-ePz" id="cba-Ig-NGu"/>
+                <outlet property="categoryLabel" destination="9Jd-z3-VNq" id="tZ2-I0-HCQ"/>
+                <outlet property="nameLabel" destination="Hls-de-cOw" id="Wf3-8u-IYd"/>
+            </connections>
+            <point key="canvasLocation" x="144.92753623188406" y="-52.566964285714285"/>
+        </view>
+    </objects>
+</document>

@@ -75,32 +75,61 @@ fileprivate struct FSQUrler {
     }
 }
 
-class FSQManager: NSObject, NSURLConnectionDelegate {
-    func requestTrendingVenues(longitude: Double, latitude: Double, radius: Int = 120000, limit: Int = 50) {
+class FSQRequester: NSObject, NSURLConnectionDelegate {
+    func requestTrendingVenues(longitude: Double, latitude: Double, radius: Int = 120000, limit: Int = 150, completion: @escaping ([Venue]?)->Void) {
 
         if let url = FSQUrler.trendingVenuesURL(limit: limit, radius: radius, long: longitude, lat: latitude) {
             let request = URLRequest(url:url)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                if let data  = data {
+                if let _ = error {
+                   completion(nil)
+                }
+                
+                if let data = data {
                     if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-                        self.parseJSON(json: json)
+                        let venues = self.parseJSON(json: json)
+                        completion(venues)
                     }
+                }
+                else {
+                    completion(nil)
                 }
             }
             task.resume()
             
         }
         else {
+            completion(nil)
             print("Invalid Request URL")
         }
     }
     
-    func parseJSON(json: Any) {
+    private func parseJSON(json: Any)->[Venue]? {
+        var parsedVenues = [Venue]()
+        
         if let json = json as? [String: Any], let response = json["response"] as? [String:Any], let venues = response["venues"] as? [[String: Any]]  {
-            print(venues.count)
+            for vDict in venues {
+                if let vId = vDict["id"] as? String,
+                    let name = vDict["name"] as? String,
+                    let locationDict = vDict["location"] as? [String: Any],
+                    let address = locationDict["address"] as? String,
+                    let distance = locationDict["distance"] as? Int64,
+                    let categoryDict = (vDict["categories"] as? [[String: Any]])?.first,
+                    let category = categoryDict["shortName"] as? String
+                {
+                    let venue = Manager.shared.venueWithInfo(fqId: vId, name: name, address: address, category: category, distance: distance)
+                    parsedVenues.append(venue)
+                }
+                else {
+                    return nil
+                }
+            }
         }
         else {
             print("Invalid json")
+            return nil
         }
+        
+        return parsedVenues
     }
 }

@@ -1,43 +1,12 @@
 //
-//  LocationManager.swift
+//  Requester.swift
 //  Trending5FSQ
 //
-//  Created by Branko Popovic on 12/19/19.
+//  Created by Branko Popovic on 12/21/19.
 //  Copyright © 2019 Branko Popovic. All rights reserved.
 //
 
 import Foundation
-import CoreLocation
-
-class LocationDetector: NSObject, CLLocationManagerDelegate {
-    private let locationManager: CLLocationManager?
-    typealias LocationFetched = (_ lat: Double?, _ long: Double?)->Void
-    private var locationFetchedAction: LocationFetched?
-    
-    override init() {
-        locationManager = CLLocationManager()
-        super.init()
-        locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-    }
-    
-    func fetchCurrentLocation(completion: @escaping LocationFetched) {
-        locationFetchedAction = completion
-        locationManager?.startUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let lastLocation = locations.last else {
-            locationFetchedAction?(nil, nil)
-            return
-        }
-        
-        manager.stopUpdatingLocation()
-        
-        locationFetchedAction?(lastLocation.coordinate.latitude, lastLocation.coordinate.longitude)
-    }
-}
 
 fileprivate struct FSQKeys {
     static let CLIENT_ID = "X1AN0BZQ4SP34FT0HVACAIHVITXURUDVX4T5R12VTVFU5ZU3"
@@ -47,15 +16,15 @@ fileprivate struct FSQKeys {
 fileprivate struct FSQUrler {
     static let baseURL = "https://api.foursquare.com"
     
-    static let trendingVenues = "/v2/venues/trending"
+    static let trendingVenuesEndpoint = "/v2/venues/trending"
     
     static func trendingVenuesURL(limit: Int, radius: Int, long: Double, lat: Double)->URL? {
-        var urlString = baseURL + trendingVenues
+        var urlString = baseURL + trendingVenuesEndpoint
         let auth = authParams()
+        let v = versionParam()
         let limit = param(withKey: "limit", andValue: String(limit))
         let radius = param(withKey: "radius", andValue: String(radius))
         let ll = param(withKey: "ll", andValue: String(lat)+","+String(long))
-        let v = versionParam()
         urlString.append("?"+auth+"&"+limit+"&"+radius+"&"+ll+"&"+v)
         return URL(string: urlString)
     }
@@ -76,7 +45,7 @@ fileprivate struct FSQUrler {
 }
 
 class FSQRequester: NSObject, NSURLConnectionDelegate {
-    func requestTrendingVenues(longitude: Double, latitude: Double, radius: Int = 120000, limit: Int = 5, completion: @escaping ([Venue]?)->Void) {
+    func requestTrendingVenues(longitude: Double, latitude: Double, radius: Int = 99999, limit: Int = 5, completion: @escaping ([Venue]?)->Void) {
 
         if let url = FSQUrler.trendingVenuesURL(limit: limit, radius: radius, long: longitude, lat: latitude) {
             let request = URLRequest(url:url)
@@ -84,8 +53,9 @@ class FSQRequester: NSObject, NSURLConnectionDelegate {
                 if let _ = error {
                    completion(nil)
                 }
-                
-                if let data = data {
+                else if let data = data,
+                    let response = response as? HTTPURLResponse,
+                    response.statusCode == 200 {
                     if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
                         let venues = self.parseJSON(json: json)
                         completion(venues)

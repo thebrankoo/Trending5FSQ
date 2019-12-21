@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var segCtrl: UISegmentedControl!
+    @IBOutlet weak var noDataLoadedLabel: UILabel!
     
     private var viewModel: VenuesViewModel?
     
@@ -19,12 +20,14 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainScrollView.frame = CGRect(x: mainScrollView.frame.origin.x, y: mainScrollView.frame.origin.y, width: self.view.bounds.width-40.0, height: self.view.bounds.height-100)
         viewModel = VenuesViewModel()
         viewModel?.delegate = self
         viewModel?.run()
     }
     
     @IBAction func segValueChanged(_ sender: Any) {
+        scrollToTop()
         if segCtrl.selectedSegmentIndex == 0 {
             setupVenuesView()
         }
@@ -39,7 +42,11 @@ class MainViewController: UIViewController {
         }
         mainScrollView.layoutIfNeeded()
     }
-
+    
+    private func scrollToTop() {
+        let desiredOffset = CGPoint(x: 0, y: -mainScrollView.contentInset.top)
+        mainScrollView.setContentOffset(desiredOffset, animated: false)
+    }
 }
 
 // MARK: - Trending venues setup
@@ -54,16 +61,20 @@ extension MainViewController: VenuesViewModelProtocol {
         trendingStackView = generateVenuesView()
         
         if let stackView = trendingStackView {
+            noDataLoadedLabel.isHidden = stackView.arrangedSubviews.count == 0 ? false : true
             cleanScrollView()
             mainScrollView.addSubview(stackView)
             NSLayoutConstraint.activate([
-//                stackView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
-//                stackView.trailingAnchor.constraint(equalTo: mainScrollView.trailingAnchor),
+                stackView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
+                stackView.trailingAnchor.constraint(equalTo: mainScrollView.trailingAnchor),
                 stackView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
                 stackView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
                 stackView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor)
             ])
             mainScrollView.layoutIfNeeded()
+        }
+        else {
+            noDataLoadedLabel.isHidden = false
         }
     }
     
@@ -115,6 +126,7 @@ extension MainViewController {
     
     func generateTextView() {
         aboutTextView = createAboutTextView()
+        noDataLoadedLabel.isHidden = true
         aboutTextView?.translatesAutoresizingMaskIntoConstraints = false
         if let textView = aboutTextView {
             cleanScrollView()
@@ -133,6 +145,7 @@ extension MainViewController {
     func createAboutTextView()->UITextView {
         let aboutTextView = UITextView()
         aboutTextView.translatesAutoresizingMaskIntoConstraints = false
+        aboutTextView.textAlignment = .justified
         aboutTextView.text =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla a dui congue porta. Quisque tempor leo sed vestibulum sodales. Sed ut turpis vitae velit consectetur faucibus. Cras rhoncus, lorem eget posuere aliquet, elit elit eleifend orci, non pretium risus elit id mauris. Cras vel sem quam. Aenean vestibulum purus sed massa vulputate semper. Nam luctus faucibus felis, nec aliquet erat iaculis vel. Curabitur pellentesque nunc placerat risus bibendum, a placerat massa ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque lorem nisi, porttitor a ullamcorper nec, gravida et sapien. Vivamus commodo interdum nisl, sit amet pharetra arcu ornare vitae. Sed feugiat commodo libero nec efficitur."
         aboutTextView.font = UIFont(name: aboutTextView.font!.fontName, size: 18)

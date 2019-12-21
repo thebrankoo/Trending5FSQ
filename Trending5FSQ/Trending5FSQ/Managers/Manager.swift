@@ -19,6 +19,8 @@ class Manager: NSObject {
     private let locationDetector: LocationDetector
     private let fsqRequester: FSQRequester
     
+    private var isLocationServiceEnabled = false
+    
     weak var delegate: ManagerProtocol?
     
     override init() {
@@ -26,6 +28,7 @@ class Manager: NSObject {
         locationDetector = LocationDetector()
         fsqRequester = FSQRequester()
         super.init()
+        locationDetector.delegate = self
     }
     
     func fetchVenues() {
@@ -41,7 +44,47 @@ class Manager: NSObject {
             }
         }
     }
+}
+
+// MARK: - Request data&Location delegate
+extension Manager: LocationDetectorProtocol {
+    private func fetchRequestVenues(completion: @escaping ([Venue]?)->Void) {
+        isLocationServiceEnabled = locationDetector.fetchCurrentLocation { [weak self] (lat, long) in
+            if let long = long, let lat = lat {
+                self?.fsqRequester.requestTrendingVenues(longitude: long, latitude: lat, completion: { (venues) in
+                    completion(venues)
+                })
+            }
+            else {
+                print("Invalid long and lat")
+                completion(nil)
+            }
+        }
+    }
     
+    func didChangedAuthStatusToEnabled() {
+        if !isLocationServiceEnabled {
+            fetchVenues()
+            isLocationServiceEnabled = true
+        }
+    }
+}
+
+// MARK: - Persisting data
+extension Manager {
+    func persistData() {
+        cdManager.saveContext()
+    }
+    
+    private func fetchPersistedVenues(completion: @escaping ([Venue]?)->Void) {
+        cdManager.fetchVenues { (venues) in
+            completion(venues)
+        }
+    }
+}
+
+// MARK: - Venue factory
+extension Manager {
     func venueWithInfo(fqId: String, name: String, address: String, category: String, distance: Int64) -> Venue {
         if let venue = cdManager.update(venueWithId: fqId, address: address, category: category, name: name, distance: distance) {
             return venue
@@ -61,29 +104,4 @@ class Manager: NSObject {
         
         return venue
     }
-    
-    func persistData() {
-        cdManager.saveContext()
-    }
-    
-    private func fetchRequestVenues(completion: @escaping ([Venue]?)->Void) {
-        locationDetector.fetchCurrentLocation { [weak self] (lat, long) in
-            if let long = long, let lat = lat {
-                self?.fsqRequester.requestTrendingVenues(longitude: long, latitude: lat, completion: { (venues) in
-                    completion(venues)
-                })
-            }
-            else {
-                print("Invalid long and lat")
-                completion(nil)
-            }
-        }
-    }
-    
-    private func fetchPersistedVenues(completion: @escaping ([Venue]?)->Void) {
-        cdManager.fetchVenues { (venues) in
-            completion(venues)
-        }
-    }
-    
 }

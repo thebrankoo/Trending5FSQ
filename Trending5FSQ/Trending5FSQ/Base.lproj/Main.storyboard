@@ -25,6 +25,12 @@
                                     <action selector="segValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9G8-e9-kpA"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data loaded" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZM-0g-wDq">
+                                <rect key="frame" x="20" y="175" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wil-Mz-jQK">
                                 <rect key="frame" x="20" y="92" width="374" height="770"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -36,12 +42,16 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Mjy-OX-78H" secondAttribute="trailing" constant="20" id="0KK-6P-caH"/>
                             <constraint firstItem="Mjy-OX-78H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="1Vx-bO-Dp5"/>
+                            <constraint firstAttribute="trailing" secondItem="nZM-0g-wDq" secondAttribute="trailing" constant="20" id="SLp-E1-4cR"/>
+                            <constraint firstItem="nZM-0g-wDq" firstAttribute="top" secondItem="Mjy-OX-78H" secondAttribute="bottom" constant="100" id="gc7-En-kdK"/>
                             <constraint firstItem="Mjy-OX-78H" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="hq2-bY-d7M"/>
+                            <constraint firstItem="nZM-0g-wDq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="kuA-zF-y5s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mainScrollView" destination="Wil-Mz-jQK" id="fz7-e5-WVe"/>
+                        <outlet property="noDataLoadedLabel" destination="nZM-0g-wDq" id="eG2-u0-9gP"/>
                         <outlet property="segCtrl" destination="Mjy-OX-78H" id="N99-A9-MPu"/>
                     </connections>
                 </viewController>

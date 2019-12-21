@@ -18,12 +18,33 @@
 		199A73AD23AC06B200FA33C3 /* Trending5FSQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 199A73AB23AC06B200FA33C3 /* Trending5FSQ.xcdatamodeld */; };
 		199A73AF23AC06B300FA33C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199A73AE23AC06B300FA33C3 /* Assets.xcassets */; };
 		199A73B223AC06B300FA33C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199A73B023AC06B300FA33C3 /* LaunchScreen.storyboard */; };
-		199A73BA23AC097200FA33C3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A73B923AC097200FA33C3 /* LocationManager.swift */; };
+		199A73BA23AC097200FA33C3 /* LocationDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A73B923AC097200FA33C3 /* LocationDetector.swift */; };
+		19A312BC23AE388400B4F1C1 /* Trending5FSQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A312BB23AE388400B4F1C1 /* Trending5FSQTests.swift */; };
+		19A312C323AE38A000B4F1C1 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FD4923AD8D680098075A /* Requester.swift */; };
+		19A312C423AE399A00B4F1C1 /* Venue+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197ADEB723ACF90D0058C111 /* Venue+CoreDataClass.swift */; };
+		19A312C523AE399D00B4F1C1 /* Venue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197ADEB823ACF90D0058C111 /* Venue+CoreDataProperties.swift */; };
+		19A312C623AE3A4A00B4F1C1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1A79623AD0A10009E4203 /* Manager.swift */; };
+		19A312C723AE3A6300B4F1C1 /* LocationDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A73B923AC097200FA33C3 /* LocationDetector.swift */; };
+		19A312C823AE3A6700B4F1C1 /* CDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197ADEB523ACF8990058C111 /* CDManager.swift */; };
+		19A312C923AE3A6C00B4F1C1 /* VenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FD4723AD55E70098075A /* VenueView.swift */; };
+		19A312CA23AE3A7000B4F1C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A73A623AC06B200FA33C3 /* MainViewController.swift */; };
+		19A312CB23AE3A7400B4F1C1 /* VenuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1A79823AD0FA1009E4203 /* VenuesViewModel.swift */; };
 		19B0FD4623AD54860098075A /* VenueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FD4523AD54860098075A /* VenueView.xib */; };
 		19B0FD4823AD55E70098075A /* VenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FD4723AD55E70098075A /* VenueView.swift */; };
+		19B0FD4A23AD8D680098075A /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FD4923AD8D680098075A /* Requester.swift */; };
 		19C1A79723AD0A10009E4203 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1A79623AD0A10009E4203 /* Manager.swift */; };
 		19C1A79923AD0FA1009E4203 /* VenuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1A79823AD0FA1009E4203 /* VenuesViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19A312BE23AE388400B4F1C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 199A739723AC06B200FA33C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 199A739E23AC06B200FA33C3;
+			remoteInfo = Trending5FSQ;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		197ADEB523ACF8990058C111 /* CDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDManager.swift; sourceTree = "<group>"; };
@@ -39,9 +60,13 @@
 		199A73AE23AC06B300FA33C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		199A73B123AC06B300FA33C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		199A73B323AC06B300FA33C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		199A73B923AC097200FA33C3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		199A73B923AC097200FA33C3 /* LocationDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetector.swift; sourceTree = "<group>"; };
+		19A312B923AE388400B4F1C1 /* Trending5FSQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Trending5FSQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19A312BB23AE388400B4F1C1 /* Trending5FSQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending5FSQTests.swift; sourceTree = "<group>"; };
+		19A312BD23AE388400B4F1C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19B0FD4523AD54860098075A /* VenueView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueView.xib; sourceTree = "<group>"; };
 		19B0FD4723AD55E70098075A /* VenueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueView.swift; sourceTree = "<group>"; };
+		19B0FD4923AD8D680098075A /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 		19C1A79623AD0A10009E4203 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		19C1A79823AD0FA1009E4203 /* VenuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +77,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				197ADEBD23ACF93C0058C111 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19A312B623AE388400B4F1C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				199A73A123AC06B200FA33C3 /* Trending5FSQ */,
+				19A312BA23AE388400B4F1C1 /* Trending5FSQTests */,
 				199A73A023AC06B200FA33C3 /* Products */,
 				197ADEBB23ACF93C0058C111 /* Frameworks */,
 			);
@@ -79,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				199A739F23AC06B200FA33C3 /* Trending5FSQ.app */,
+				19A312B923AE388400B4F1C1 /* Trending5FSQTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,36 +120,70 @@
 		199A73A123AC06B200FA33C3 /* Trending5FSQ */ = {
 			isa = PBXGroup;
 			children = (
-				19C1A79423AD09C6009E4203 /* Core Data */,
+				19C1A79423AD09C6009E4203 /* Core Data&Model */,
+				19B0FD4B23AD8D850098075A /* Logic */,
 				19C1A79523AD09E0009E4203 /* Managers */,
+				19B0FD4C23AD8DD10098075A /* Views */,
+				19B0FD4D23AD8DFA0098075A /* ViewModel */,
 				199A73A223AC06B200FA33C3 /* AppDelegate.swift */,
 				199A73A423AC06B200FA33C3 /* SceneDelegate.swift */,
-				199A73A623AC06B200FA33C3 /* MainViewController.swift */,
 				199A73A823AC06B200FA33C3 /* Main.storyboard */,
 				199A73AE23AC06B300FA33C3 /* Assets.xcassets */,
 				199A73B023AC06B300FA33C3 /* LaunchScreen.storyboard */,
 				199A73B323AC06B300FA33C3 /* Info.plist */,
-				19C1A79823AD0FA1009E4203 /* VenuesViewModel.swift */,
-				19B0FD4523AD54860098075A /* VenueView.xib */,
-				19B0FD4723AD55E70098075A /* VenueView.swift */,
 			);
 			path = Trending5FSQ;
 			sourceTree = "<group>";
 		};
-		19C1A79423AD09C6009E4203 /* Core Data */ = {
+		19A312BA23AE388400B4F1C1 /* Trending5FSQTests */ = {
+			isa = PBXGroup;
+			children = (
+				19A312BB23AE388400B4F1C1 /* Trending5FSQTests.swift */,
+				19A312BD23AE388400B4F1C1 /* Info.plist */,
+			);
+			path = Trending5FSQTests;
+			sourceTree = "<group>";
+		};
+		19B0FD4B23AD8D850098075A /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				199A73B923AC097200FA33C3 /* LocationDetector.swift */,
+				19B0FD4923AD8D680098075A /* Requester.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		19B0FD4C23AD8DD10098075A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19B0FD4723AD55E70098075A /* VenueView.swift */,
+				19B0FD4523AD54860098075A /* VenueView.xib */,
+				199A73A623AC06B200FA33C3 /* MainViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		19B0FD4D23AD8DFA0098075A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				19C1A79823AD0FA1009E4203 /* VenuesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		19C1A79423AD09C6009E4203 /* Core Data&Model */ = {
 			isa = PBXGroup;
 			children = (
 				197ADEB723ACF90D0058C111 /* Venue+CoreDataClass.swift */,
 				197ADEB823ACF90D0058C111 /* Venue+CoreDataProperties.swift */,
 				199A73AB23AC06B200FA33C3 /* Trending5FSQ.xcdatamodeld */,
 			);
-			path = "Core Data";
+			path = "Core Data&Model";
 			sourceTree = "<group>";
 		};
 		19C1A79523AD09E0009E4203 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				199A73B923AC097200FA33C3 /* LocationManager.swift */,
 				197ADEB523ACF8990058C111 /* CDManager.swift */,
 				19C1A79623AD0A10009E4203 /* Manager.swift */,
 			);
@@ -142,6 +210,24 @@
 			productReference = 199A739F23AC06B200FA33C3 /* Trending5FSQ.app */;
 			productType = "com.apple.product-type.application";
 		};
+		19A312B823AE388400B4F1C1 /* Trending5FSQTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19A312C023AE388400B4F1C1 /* Build configuration list for PBXNativeTarget "Trending5FSQTests" */;
+			buildPhases = (
+				19A312B523AE388400B4F1C1 /* Sources */,
+				19A312B623AE388400B4F1C1 /* Frameworks */,
+				19A312B723AE388400B4F1C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19A312BF23AE388400B4F1C1 /* PBXTargetDependency */,
+			);
+			name = Trending5FSQTests;
+			productName = Trending5FSQTests;
+			productReference = 19A312B923AE388400B4F1C1 /* Trending5FSQTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,6 +240,10 @@
 				TargetAttributes = {
 					199A739E23AC06B200FA33C3 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					19A312B823AE388400B4F1C1 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 199A739E23AC06B200FA33C3;
 					};
 				};
 			};
@@ -171,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				199A739E23AC06B200FA33C3 /* Trending5FSQ */,
+				19A312B823AE388400B4F1C1 /* Trending5FSQTests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +278,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19A312B723AE388400B4F1C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -196,7 +294,8 @@
 			files = (
 				199A73A723AC06B200FA33C3 /* MainViewController.swift in Sources */,
 				199A73A323AC06B200FA33C3 /* AppDelegate.swift in Sources */,
-				199A73BA23AC097200FA33C3 /* LocationManager.swift in Sources */,
+				19B0FD4A23AD8D680098075A /* Requester.swift in Sources */,
+				199A73BA23AC097200FA33C3 /* LocationDetector.swift in Sources */,
 				19B0FD4823AD55E70098075A /* VenueView.swift in Sources */,
 				199A73A523AC06B200FA33C3 /* SceneDelegate.swift in Sources */,
 				197ADEB623ACF8990058C111 /* CDManager.swift in Sources */,
@@ -208,7 +307,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19A312B523AE388400B4F1C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19A312C923AE3A6C00B4F1C1 /* VenueView.swift in Sources */,
+				19A312C323AE38A000B4F1C1 /* Requester.swift in Sources */,
+				19A312C423AE399A00B4F1C1 /* Venue+CoreDataClass.swift in Sources */,
+				19A312BC23AE388400B4F1C1 /* Trending5FSQTests.swift in Sources */,
+				19A312C823AE3A6700B4F1C1 /* CDManager.swift in Sources */,
+				19A312C523AE399D00B4F1C1 /* Venue+CoreDataProperties.swift in Sources */,
+				19A312CB23AE3A7400B4F1C1 /* VenuesViewModel.swift in Sources */,
+				19A312CA23AE3A7000B4F1C1 /* MainViewController.swift in Sources */,
+				19A312C723AE3A6300B4F1C1 /* LocationDetector.swift in Sources */,
+				19A312C623AE3A4A00B4F1C1 /* Manager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19A312BF23AE388400B4F1C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 199A739E23AC06B200FA33C3 /* Trending5FSQ */;
+			targetProxy = 19A312BE23AE388400B4F1C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		199A73A823AC06B200FA33C3 /* Main.storyboard */ = {
@@ -378,6 +502,44 @@
 			};
 			name = Release;
 		};
+		19A312C123AE388400B4F1C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Trending5FSQTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = thebrankoo.Trending5FSQTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trending5FSQ.app/Trending5FSQ";
+			};
+			name = Debug;
+		};
+		19A312C223AE388400B4F1C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Trending5FSQTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = thebrankoo.Trending5FSQTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trending5FSQ.app/Trending5FSQ";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -395,6 +557,15 @@
 			buildConfigurations = (
 				199A73B723AC06B300FA33C3 /* Debug */,
 				199A73B823AC06B300FA33C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19A312C023AE388400B4F1C1 /* Build configuration list for PBXNativeTarget "Trending5FSQTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A312C123AE388400B4F1C1 /* Debug */,
+				19A312C223AE388400B4F1C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

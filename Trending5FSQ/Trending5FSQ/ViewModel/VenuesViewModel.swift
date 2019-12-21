@@ -34,6 +34,7 @@ class VenuesViewModel: NSObject {
     }
 }
 
+// MARK: - Getting info
 extension VenuesViewModel {
     
     func name(atIndex index: Int)->String? {
@@ -53,20 +54,12 @@ extension VenuesViewModel {
     }
 }
 
+// MARK: - Manager protocol
 extension VenuesViewModel: ManagerProtocol {
     func managerDidFetch(venues:[Venue]?) {
         DispatchQueue.main.async {
             self.fetchedData = venues
             self.delegate?.venuesViewModelDidFinishDataLoading()
         }
-        
-//        if let vs = venues {
-//            vs.forEach { (v) in
-//                print("v: \(v.fsqId!), \(v.name!), \(v.category!), \(v.timestamp!.timeIntervalSince1970)")
-//            }
-//        }
-//        else {
-//            print("No venues")
-//        }
     }
 }

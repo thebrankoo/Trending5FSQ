@@ -39,11 +39,11 @@
                 <constraint firstItem="Hls-de-cOw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="AUD-wr-1IQ"/>
                 <constraint firstItem="9Jd-z3-VNq" firstAttribute="top" secondItem="Hls-de-cOw" secondAttribute="bottom" constant="8" id="Mbh-IM-HwE"/>
                 <constraint firstItem="38Y-dG-ePz" firstAttribute="top" secondItem="9Jd-z3-VNq" secondAttribute="bottom" constant="8" id="OGs-Q5-8Cr"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Jd-z3-VNq" secondAttribute="trailing" constant="20" id="PPp-AS-J4y"/>
+                <constraint firstAttribute="trailing" secondItem="9Jd-z3-VNq" secondAttribute="trailing" constant="20" id="PPp-AS-J4y"/>
                 <constraint firstAttribute="trailing" secondItem="Hls-de-cOw" secondAttribute="trailing" constant="20" id="R8O-6G-tyi"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="38Y-dG-ePz" secondAttribute="trailing" constant="20" id="STg-KX-Bb5"/>
-                <constraint firstItem="9Jd-z3-VNq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ghG-EO-Diy"/>
-                <constraint firstItem="38Y-dG-ePz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zT8-rw-7Ht"/>
+                <constraint firstAttribute="trailing" secondItem="38Y-dG-ePz" secondAttribute="trailing" constant="20" id="STg-KX-Bb5"/>
+                <constraint firstItem="9Jd-z3-VNq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ghG-EO-Diy"/>
+                <constraint firstItem="38Y-dG-ePz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="zT8-rw-7Ht"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
